@@ -1,7 +1,11 @@
+import Layout from '../components/layout'
+
 const Index = () => (
-  <div>
-    <h1>NACO Employee Portal</h1>
-  </div>
+  <Layout>
+    <div>
+      <h1>NACO Employee Portal</h1>
+    </div>
+  </Layout>
 )
 
 

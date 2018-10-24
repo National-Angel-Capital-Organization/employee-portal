@@ -1,7 +1,12 @@
+import Layout from '../components/layout'
+
 const About = () => (
-  <div>
-    <h1>About the NACO Employee Portal</h1>
-  </div>
+  <Layout>
+    <div>
+      <h1>About the NACO Employee Portal</h1>
+      <p>Application to view all internal information about NACO.</p>
+    </div>
+  </Layout>
 )
 
 
