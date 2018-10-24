@@ -4,8 +4,13 @@ import Layout from '../components/layout'
 
 class AddArticle extends React.Component {
 
+  state = {
+    article: ""
+  }
+
   handleEditorChange = (e) => {
-    console.log('Content was updated:', e.target.getContent());
+    const content = e.target.getContent()
+    this.setState({article: content});
   }
 
 
@@ -18,11 +23,16 @@ class AddArticle extends React.Component {
         <div>
           <h1>Add an Article</h1>
           <Editor 
-            apiKey={apiKey}
+            id='add-article'
+            apiKey={apiKey} 
             initialValue="<p>Enter your Article here...</p>" 
             init={{
-              plugins: 'link image code',
-              toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code' }}
+              plugins: ['advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                'save table contextmenu directionality emoticons template paste textcolor'],
+              toolbar: 'formatselect fontsizeselect forecolor backcolor | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image media emoticons | preview',
+              branding: false
+            }}
             onChange={this.handleEditorChange} 
           />
         </div>
