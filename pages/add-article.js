@@ -1,6 +1,5 @@
 import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
-import Layout from '../components/layout'
 
 class AddArticle extends React.Component {
 
@@ -19,7 +18,6 @@ class AddArticle extends React.Component {
     const apiKey = process.env.TINY_MCE_API_KEY
 
     return (
-      <Layout>
         <div>
           <h1>Add an Article</h1>
           <Editor 
@@ -36,8 +34,6 @@ class AddArticle extends React.Component {
             onChange={this.handleEditorChange} 
           />
         </div>
-      </Layout>
-
     )
   }
 }
