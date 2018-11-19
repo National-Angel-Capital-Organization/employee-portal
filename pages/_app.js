@@ -9,10 +9,18 @@ export default class NACOApp extends App {
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx)
     }
+
+    // Tokens & Cookies
     
-    await nookies.set(ctx, 'token 2', '7890')
     let cookies = await nookies.get(ctx)
     console.log(cookies)
+
+    if ('caspioToken' in cookies) {
+      console.log('Hooray!')
+    } else {
+      
+      await nookies.set(ctx, 'caspioToken', '7890')
+    }
     pageProps.authenticated = true
     pageProps.loading = false
     return { pageProps }
